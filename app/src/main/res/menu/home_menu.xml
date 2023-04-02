@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/stylishMenu"
+        android:icon="@drawable/ic_stylish_text"
+        android:title="Stylish Text"
+        app:cnb_iconColor="@color/bottom_nav_tint" />
+
+    <item
+        android:id="@+id/homeMenu"
+        android:icon="@drawable/ic_home"
+        android:title="Home"
+        app:cnb_iconColor="@color/bottom_nav_tint" />
+</menu>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Fancy Text Generator</string>
+
+
+    <string name="replace">Replace Text</string>
+    <string name="search">Search Text</string>
+    <string name="count">Count Text</string>
+    <string name="clone">Clone Text</string>
+    <string name="stylish_text">Stylish Text</string>
+    <string name="mark">Mark Text</string>
+    <string name="please_wait">Please wait..</string>
+    <string name="clone_limit">Clone Limit</string>
+    <string name="enter_input">Enter Input</string>
+    <string name="enter_input_data">Enter Input Data</string>
+    <string name="output">Output</string>
+    <string name="output_section">Output Section</string>
+    <string name="copy_output">Copy Output</string>
+    <string name="share_output">Share Output</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

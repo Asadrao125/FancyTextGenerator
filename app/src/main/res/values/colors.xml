@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="main_bg_color">#F4F8FE</color>
+
+    <color name="endhome">#56FFFFFF</color>
+    <color name="litetextcolor">#ECECEC</color>
+    <color name="md_amber_500">#ffc107</color>
+    <color name="colorLine">#ecf1f7</color>
+    <color name="colorText">#444b68</color>
+    <color name="colorTint">#6f96b5</color>
+    <color name="colorBgRadiuo">#e8f2ff</color>
+    <color name="colorCard">#ffffff</color>
+    <color name="c1">#2989e4</color>
+    <color name="colorBackground">#f4f9ff</color>
+
+    <!--Change home item color-->
+    <color name="ItemColorStart1">#7b4397</color>
+    <color name="ItemColorEnd1">#dc2430</color>
+
+    <color name="ItemColorStart2">#ff512f</color>
+    <color name="ItemColorEnd2">#dd2476</color>
+
+    <color name="ItemColorStart3">#de6262</color>
+    <color name="ItemColorEnd3">#ffb88c</color>
+
+    <color name="ItemColorStart4">#02aab0</color>
+    <color name="ItemColorEnd4">#00cdac</color>
+
+    <color name="ItemColorStart5">#aa076b</color>
+    <color name="ItemColorEnd5">#61045f</color>
+
+    <color name="ItemColorStart6">#56ab2f</color>
+    <color name="ItemColorEnd6">#a8e063</color>
+
+    <color name="ItemColorStart7">#d38312</color>
+    <color name="ItemColorEnd7">#a83279</color>
+
+    <color name="ItemColorStart8">#2193b0</color>
+    <color name="ItemColorEnd8">#6dd5ed</color>
+
+    <color name="ItemColorStart9">#614385</color>
+    <color name="ItemColorEnd9">#516395</color>
+
+    <color name="ItemColorStart10">#bdc3c7</color>
+    <color name="ItemColorEnd10">#2c3e50</color>
+
+    <color name="ItemColorStart11">#4568dc</color>
+    <color name="ItemColorEnd11">#b06ab3</color>
+
+    <color name="edittext_header_bg">#DEE0FC</color>
+    <color name="gray_button_color">#F5F2F9</color>
+
+    <color name="grey_1">#e6e6e6</color>
+    <color name="grey_2">#999999</color>
+    <color name="grey_3">#37474f</color>
+    <color name="grey_4">#263238</color>
+    <color name="grey_5">#b5bdbf</color>
+
+
+    <color name="bottom_nav_tint">#545D8E</color>
+    <color name="bottom_nav_tint_new">#66545D8E</color>
+
+</resources>

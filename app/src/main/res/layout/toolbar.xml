@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/main_bg_color"
+    android:elevation="10dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/icBackOrMenu"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/background_ripple"
+        android:padding="10dp"
+        android:src="@drawable/ic_back"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/toolbarTitle"
+        style="@style/TextViewMediumBlackBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/icBackOrMenu"
+        android:text="Toolbar Title" />
+
+    <ImageView
+        android:id="@+id/icMenu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/background_ripple"
+        android:padding="10dp"
+        android:src="@drawable/ic_more_home"
+        android:visibility="gone" />
+
+</RelativeLayout>
