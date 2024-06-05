@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "934110621120",
+    "project_id": "fancy-text-generator-c0114",
+    "storage_bucket": "fancy-text-generator-c0114.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934110621120:android:7fed47b2b3d3f0b6b0ac25",
+        "android_client_info": {
+          "package_name": "com.stylish.fancy.text.generator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbba54RljITsG9G3P5YDZDYDY-mmcUjK8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

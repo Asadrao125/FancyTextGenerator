@@ -1,30 +1,45 @@
 plugins {
     id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
-    namespace 'com.android.app.fancytextreplacer'
+    namespace 'com.stylish.fancy.text.generator'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.android.app.fancytextreplacer"
+        applicationId "com.stylish.fancy.text.generator"
         minSdk 24
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 10
+        versionName "2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding true
     }
 }
 
@@ -39,5 +54,10 @@ dependencies {
 
     implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'
     implementation 'com.github.KaelLi1989:NiceRatingBar:1.0.0'
-    implementation 'androidx.core:core-splashscreen:1.0.0-alpha02'
+
+    implementation platform('com.google.firebase:firebase-bom:32.2.2')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation("com.google.firebase:firebase-crashlytics")
+    implementation 'com.google.firebase:firebase-config:21.4.1'
+    implementation 'com.google.code.gson:gson:2.8.8'
 }

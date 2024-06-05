@@ -1,153 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/main_bg_color"
-    android:orientation="vertical"
-    tools:context=".activities.CountTextActivity">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:background="@color/main_bg_color"
+        android:orientation="vertical"
+        tools:context=".activities.CountTextActivity">
 
-        <include layout="@layout/toolbar" />
-
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fillViewport="true">
+            android:orientation="vertical">
 
-            <LinearLayout
+            <include layout="@layout/toolbar" />
+
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:fillViewport="true">
 
-                <androidx.cardview.widget.CardView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="8dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="8dp"
-                    app:cardMaxElevation="8dp"
-                    app:cardUseCompatPadding="true">
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/edittext_header_bg"
-                        android:orientation="vertical">
+                        android:background="@drawable/gray_border"
+                        android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/TextViewMediumNormalBlack"
-                            android:layout_width="match_parent"
+                        <ImageView
+                            android:id="@+id/imgClone"
+                            android:layout_width="50dp"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/border_solid_main_color_bg"
-                            android:text="Enter Input Data" />
+                            android:layout_gravity="center"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_text_fields"
+                            app:tint="@color/colorTint" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/grey_1" />
 
                         <EditText
                             android:id="@+id/edtInput"
                             style="@style/EditTextStyle"
                             android:layout_width="match_parent"
-                            android:layout_height="140dp"
-                            android:hint="Enter Input"
-                            android:minLines="5" />
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint="@string/enter_input"
+                            android:maxLength="500"
+                            android:maxLines="3" />
 
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
-
-                <CheckBox
-                    android:id="@+id/checkBox"
-                    style="@style/TextViewMediumNormalBlack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:buttonTint="@color/bottom_nav_tint"
-                    android:text="Count With Spaces" />
-
-                <TextView
-                    android:id="@+id/tvCountText"
-                    style="@style/ButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="20dp"
-                    android:text="Count Text" />
-
-                <LinearLayout
-                    android:id="@+id/outputLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <androidx.cardview.widget.CardView
+                    <TextView
+                        android:id="@+id/tvCountText"
+                        style="@style/ButtonStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:elevation="8dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp"
-                        app:cardMaxElevation="8dp"
-                        app:cardUseCompatPadding="true">
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/button_bg_shape"
+                        android:elevation="2dp"
+                        android:text="@string/count_text_btn" />
 
-                        <LinearLayout
+                    <CheckBox
+                        android:id="@+id/cbReverseText"
+                        style="@style/TextViewMediumNormalBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:buttonTint="@color/bottom_nav_tint"
+                        android:text="@string/reverse_text_cb" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        style="@style/TextViewMediumNormalBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/bottom_nav_tint"
+                        android:text="@string/count_with_spaces_cb" />
+
+                    <CheckBox
+                        android:id="@+id/cbCountWithSpaces"
+                        style="@style/TextViewMediumNormalBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/remove_spaces_cb" />
+
+                    <LinearLayout
+                        android:id="@+id/outputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/gray_border"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/TextViewMediumNormalBlack"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/edittext_header_bg"
-                            android:orientation="vertical">
+                            android:text="Preview"
+                            android:textAlignment="center" />
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/border_solid_main_color_bg"
-                                android:orientation="vertical">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/grey_1" />
 
-                                <TextView
-                                    style="@style/TextViewMediumNormalBlack"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Output Section" />
+                        <TextView
+                            android:id="@+id/tvReverseText"
+                            style="@style/TextViewMediumBlackBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reverse Text: "
+                            android:visibility="gone" />
 
-                            </LinearLayout>
+                        <TextView
+                            android:id="@+id/tvOutput"
+                            style="@style/TextViewMediumBlackBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Output"
+                            android:visibility="gone" />
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/border"
-                                android:orientation="vertical"
-                                android:padding="10dp">
+                        <TextView
+                            android:id="@+id/tvTotalWords"
+                            style="@style/TextViewMediumBlackBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Words: " />
 
-                                <TextView
-                                    android:id="@+id/tvTotalWords"
-                                    style="@style/TextViewMediumBlackBold"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Total Words: " />
+                        <TextView
+                            android:id="@+id/tvTotalLetters"
+                            style="@style/TextViewMediumBlackBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Letters: " />
 
-                                <TextView
-                                    android:id="@+id/tvTotalLetters"
-                                    style="@style/TextViewMediumBlackBold"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Total Letters: " />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
+                    </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </ScrollView>
 
-        </ScrollView>
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</layout>

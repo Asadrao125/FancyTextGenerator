@@ -16,12 +16,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="14dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="2dp"
+            app:cardCornerRadius="5dp"
             app:cardElevation="1dp"
             app:cardPreventCornerOverlap="false">
 
@@ -76,6 +75,25 @@
                     android:background="@color/colorLine" />
 
                 <ImageView
+                    android:id="@+id/micBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    android:adjustViewBounds="true"
+                    android:background="?attr/actionBarItemBackground"
+                    android:contentDescription="@string/app_name"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_mic"
+                    app:tint="@color/colorTint" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorLine" />
+
+                <ImageView
                     android:id="@+id/closebtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -93,15 +111,25 @@
 
         </androidx.cardview.widget.CardView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycle_view_FF"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="14dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="14dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
-            tools:listitem="@layout/item_stylish_adapter" />
+            app:cardBackgroundColor="@color/colorCard"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="1dp"
+            app:cardPreventCornerOverlap="false">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_view_FF"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_stylish_adapter" />
+
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 

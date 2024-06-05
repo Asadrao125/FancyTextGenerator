@@ -20,7 +20,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@drawable/ic_share"
-            app:tint="@color/bottom_nav_tint" />
+            app:tint="@color/colorTint" />
 
         <TextView
             style="@style/TextViewMediumNormalWhite"
@@ -51,7 +51,7 @@
             android:layout_height="25dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_privacy_policy"
-            app:tint="@color/bottom_nav_tint" />
+            app:tint="@color/colorTint" />
 
         <TextView
             style="@style/TextViewMediumNormalWhite"
@@ -82,7 +82,7 @@
             android:layout_height="25dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_update"
-            app:tint="@color/bottom_nav_tint" />
+            app:tint="@color/colorTint" />
 
         <TextView
             style="@style/TextViewMediumNormalWhite"
@@ -113,7 +113,7 @@
             android:layout_height="25dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_feedback"
-            app:tint="@color/bottom_nav_tint" />
+            app:tint="@color/colorTint" />
 
         <TextView
             style="@style/TextViewMediumNormalWhite"
@@ -137,14 +137,15 @@
         android:layout_height="wrap_content"
         android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal"
-        android:padding="15dp">
+        android:padding="15dp"
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_more_apps"
-            app:tint="@color/bottom_nav_tint" />
+            app:tint="@color/colorTint" />
 
         <TextView
             style="@style/TextViewMediumNormalWhite"
@@ -175,7 +176,7 @@
             android:layout_height="25dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_star_off"
-            app:tint="@color/bottom_nav_tint" />
+            app:tint="@color/colorTint" />
 
         <TextView
             style="@style/TextViewMediumNormalWhite"
