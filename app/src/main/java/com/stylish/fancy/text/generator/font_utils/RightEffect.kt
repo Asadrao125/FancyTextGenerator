@@ -1,37 +1,39 @@
-package com.stylish.fancy.text.generator.font_utils;
+package com.stylish.fancy.text.generator.font_utils
 
-import androidx.annotation.NonNull;
+import com.stylish.fancy.text.generator.interfaces.Style
 
-import com.stylish.fancy.text.generator.interfaces.Style;
+class RightEffect(private var character: String) : Style {
 
-public class RightEffect implements Style {
-
-    String character;
-
-    public RightEffect(String text) {
-        this.character = text;
-    }
-
-    @NonNull
-    @Override
-    public String generate(@NonNull String input) {
-        try {
-            StringBuilder result = new StringBuilder();
-            for (int i = 0; i < input.length(); i++) {
-                if (input.charAt(i) == ' ') {
-                    result.append(" ");
-                } else {
-                    result.append(input.charAt(i)).append(character);
+    override fun generate(input: String?): String? {
+        return try {
+            val result = StringBuilder()
+            if (input != null) {
+                for (i in input.indices) {
+                    if (input[i] == ' ') {
+                        result.append(" ")
+                    } else {
+                        result.append(input[i]).append(character)
+                    }
                 }
             }
-            return result.toString();
-        } catch (OutOfMemoryError e) {
-            return "";
+            result.toString()
+        } catch (e: OutOfMemoryError) {
+            ""
         }
     }
 
-    @Override
-    public int hashCode() {
-        return character.hashCode();
+    override fun hashCode(): Int {
+        return character.hashCode()
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as RightEffect
+
+        if (character != other.character) return false
+
+        return true
     }
 }

@@ -1,121 +1,114 @@
-package com.stylish.fancy.text.generator.font_utils;
+package com.stylish.fancy.text.generator.font_utils
 
-import java.util.Random;
+import java.util.Random
 
-public class Zalgo {
-    public static final char[] UP_CHARS = {
-            '\u030d',    '\u030e',
-            '\u0304',    '\u0305',
-            '\u033f',    '\u0311',
-            '\u0306',    '\u0310',
-            '\u0352',    '\u0357',
-            '\u0351',    '\u0307',
-            '\u0308',    '\u030a',
-            '\u0342',    '\u0343',
-            '\u0344',    '\u034a',
-            '\u034b',    '\u034c',
-            '\u0303',    '\u0302',
-            '\u030c',    '\u0350',
-            '\u0300',    '\u0301',
-            '\u030b',    '\u030f',
-            '\u0312',    '\u0313',
-            '\u0314',    '\u033d',
-            '\u0309',    '\u0363',
-            '\u0364',    '\u0365',
-            '\u0366',    '\u0367',
-            '\u0368',    '\u0369',
-            '\u036a',    '\u036b',
-            '\u036c',    '\u036d',
-            '\u036e',    '\u036f',
-            '\u033e',    '\u035b',
-            '\u0346',    '\u031a'};
+object Zalgo {
+    val UP_CHARS = charArrayOf(
+        '\u030d', '\u030e',
+        '\u0304', '\u0305',
+        '\u033f', '\u0311',
+        '\u0306', '\u0310',
+        '\u0352', '\u0357',
+        '\u0351', '\u0307',
+        '\u0308', '\u030a',
+        '\u0342', '\u0343',
+        '\u0344', '\u034a',
+        '\u034b', '\u034c',
+        '\u0303', '\u0302',
+        '\u030c', '\u0350',
+        '\u0300', '\u0301',
+        '\u030b', '\u030f',
+        '\u0312', '\u0313',
+        '\u0314', '\u033d',
+        '\u0309', '\u0363',
+        '\u0364', '\u0365',
+        '\u0366', '\u0367',
+        '\u0368', '\u0369',
+        '\u036a', '\u036b',
+        '\u036c', '\u036d',
+        '\u036e', '\u036f',
+        '\u033e', '\u035b',
+        '\u0346', '\u031a'
+    )
+    val DOWN_CHARS = charArrayOf(
+        '\u0316', '\u0317',
+        '\u0318', '\u0319',
+        '\u031c', '\u031d',
+        '\u031e', '\u031f',
+        '\u0320', '\u0324',
+        '\u0325', '\u0326',
+        '\u0329', '\u032a',
+        '\u032b', '\u032c',
+        '\u032d', '\u032e',
+        '\u032f', '\u0330',
+        '\u0331', '\u0332',
+        '\u0333', '\u0339',
+        '\u033a', '\u033b',
+        '\u033c', '\u0345',
+        '\u0347', '\u0348',
+        '\u0349', '\u034d',
+        '\u034e', '\u0353',
+        '\u0354', '\u0355',
+        '\u0356', '\u0359',
+        '\u035a', '\u0323'
+    )
+    val MID_CHARS = charArrayOf(
+        '\u0315', '\u031b',
+        '\u0340', '\u0341',
+        '\u0358', '\u0321',
+        '\u0322', '\u0327',
+        '\u0328', '\u0334',
+        '\u0335', '\u0336',
+        '\u034f', '\u035c',
+        '\u035d', '\u035e',
+        '\u035f', '\u0360',
+        '\u0362', '\u0338',
+        '\u0337', '\u0361',
+        '\u0489'
+    )
 
-    public static final char[] DOWN_CHARS = {
-            '\u0316',        '\u0317',
-            '\u0318',        '\u0319',
-            '\u031c',        '\u031d',
-            '\u031e',        '\u031f',
-            '\u0320',        '\u0324',
-            '\u0325',        '\u0326',
-            '\u0329',        '\u032a',
-            '\u032b',        '\u032c',
-            '\u032d',        '\u032e',
-            '\u032f',        '\u0330',
-            '\u0331',        '\u0332',
-            '\u0333',        '\u0339',
-            '\u033a',        '\u033b',
-            '\u033c',        '\u0345',
-            '\u0347',        '\u0348',
-            '\u0349',        '\u034d',
-            '\u034e',        '\u0353',
-            '\u0354',        '\u0355',
-            '\u0356',        '\u0359',
-            '\u035a',        '\u0323'
-    };
-
-    public static final char[] MID_CHARS = {
-            '\u0315',       '\u031b',
-            '\u0340',       '\u0341',
-            '\u0358',       '\u0321',
-            '\u0322',       '\u0327',
-            '\u0328',       '\u0334',
-            '\u0335',       '\u0336',
-            '\u034f',       '\u035c',
-            '\u035d',       '\u035e',
-            '\u035f',       '\u0360',
-            '\u0362',       '\u0338',
-            '\u0337',       '\u0361',
-            '\u0489'
-    };
-
-    private static boolean isZalgo(char c) {
-        for (char upChar : UP_CHARS) {
+    private fun isZalgo(c: Char): Boolean {
+        for (upChar in UP_CHARS) {
             if (c == upChar) {
-                return true;
+                return true
             }
         }
-        for (char downChar : DOWN_CHARS) {
+        for (downChar in DOWN_CHARS) {
             if (c == downChar) {
-                return true;
+                return true
             }
         }
-        for (char midChar : MID_CHARS) {
+        for (midChar in MID_CHARS) {
             if (c == midChar) {
-                return true;
+                return true
             }
         }
-        return false;
+        return false
     }
 
-    public static String generate(String source, int up, int mid, int down) {
-        StringBuilder result = new StringBuilder();
-        Random rand = new Random(System.currentTimeMillis());
-
-        for (int i = 0; i < source.length(); i++) {
-            if (isZalgo(source.charAt(i))) {
-                continue;
+    @JvmOverloads
+    fun generate(source: String, up: Int = 16, mid: Int = 6, down: Int = 16): String {
+        val result = StringBuilder()
+        val rand = Random(System.currentTimeMillis())
+        for (i in source.indices) {
+            if (isZalgo(source[i])) {
+                continue
             } else {
-                result.append(source.charAt(i));
+                result.append(source[i])
             }
-
-            int upCharCount = up > 0 ? rand.nextInt(up) : 0;
-            int downCharCount = down > 0 ? rand.nextInt(down) : 0;
-            int midCharCount = mid > 0 ? rand.nextInt(mid) : 0;
-
-            for (int j = 0; j < upCharCount; j++) {
-                result.append(UP_CHARS[rand.nextInt(UP_CHARS.length)]);
+            val upCharCount = if (up > 0) rand.nextInt(up) else 0
+            val downCharCount = if (down > 0) rand.nextInt(down) else 0
+            val midCharCount = if (mid > 0) rand.nextInt(mid) else 0
+            for (j in 0 until upCharCount) {
+                result.append(UP_CHARS[rand.nextInt(UP_CHARS.size)])
             }
-            for (int j = 0; j < downCharCount; j++) {
-                result.append(DOWN_CHARS[rand.nextInt(DOWN_CHARS.length)]);
+            for (j in 0 until downCharCount) {
+                result.append(DOWN_CHARS[rand.nextInt(DOWN_CHARS.size)])
             }
-            for (int j = 0; j < midCharCount; j++) {
-                result.append(MID_CHARS[rand.nextInt(MID_CHARS.length)]);
+            for (j in 0 until midCharCount) {
+                result.append(MID_CHARS[rand.nextInt(MID_CHARS.size)])
             }
         }
-
-        return result.toString();
-    }
-    public static String generate(String source) {
-        return generate(source, 16, 6, 16);
+        return result.toString()
     }
 }

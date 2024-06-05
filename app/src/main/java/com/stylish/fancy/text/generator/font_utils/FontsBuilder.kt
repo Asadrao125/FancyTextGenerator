@@ -1,166 +1,151 @@
-package com.stylish.fancy.text.generator.font_utils;
+package com.stylish.fancy.text.generator.font_utils
 
-import com.stylish.fancy.text.generator.interfaces.Style;
+import com.stylish.fancy.text.generator.interfaces.Style
 
-import java.util.ArrayList;
-
-public class FontsBuilder {
-    private static ArrayList<String> createLeft() {
-        ArrayList<String> strings = new ArrayList<>();
-        strings.add("\u0e56\u06e3\u06dc");
-        strings.add("\u2E3E");
-        strings.add("\u2E3D");
-        strings.add("\u2E3E\u2E3E");
-        strings.add("\u2E3D\u2E3D");
-        strings.add("☢");
-        strings.add("☣");
-        strings.add("☠");
-        strings.add("⚠");
-        strings.add("☤");
-        strings.add("⚕");
-        strings.add("⚚");
-        strings.add("†");
-        strings.add("☯");
-        strings.add("⚖");
-        strings.add("☮");
-        strings.add("⚘");
-        strings.add("⚔");
-        strings.add("☭");
-        strings.add("⚒");
-        strings.add("⚓");
-        strings.add("⚛");
-        strings.add("⚜");
-        strings.add("⚡");
-        strings.add("⚶");
-        strings.add("☥");
-        strings.add("✠");
-        strings.add("✙");
-        strings.add("✞");
-        strings.add("✟");
-        strings.add("✧");
-        strings.add("⋆");
-        strings.add("★");
-        strings.add("☆");
-        strings.add("✪");
-        strings.add("✫");
-        strings.add("✬");
-        strings.add("✭");
-        strings.add("✮");
-        strings.add("✯");
-        strings.add("☸");
-        strings.add("✵");
-        strings.add("❂");
-        strings.add("☘");
-        strings.add("♡");
-        strings.add("♥");
-        strings.add("❤");
-        strings.add("⚘");
-        strings.add("❀");
-        strings.add("❃");
-        strings.add("❁");
-        strings.add("✼");
-        strings.add("☀");
-        strings.add("✌");
-        strings.add("♫");
-        strings.add("♪");
-        strings.add("☃");
-        strings.add("❄");
-        strings.add("❅");
-        strings.add("❆");
-        strings.add("☕");
-        strings.add("☂");
-        strings.add("❦");
-        strings.add("✈");
-        strings.add("♕");
-        strings.add("♛");
-        strings.add("♖");
-        strings.add("♜");
-        strings.add("☁");
-        strings.add("☾");
-        return strings;
+object FontsBuilder {
+    private fun createLeft(): ArrayList<String> {
+        val strings = ArrayList<String>()
+        strings.add("\u0e56\u06e3\u06dc")
+        strings.add("\u2E3E")
+        strings.add("\u2E3D")
+        strings.add("\u2E3E\u2E3E")
+        strings.add("\u2E3D\u2E3D")
+        strings.add("☢")
+        strings.add("☣")
+        strings.add("☠")
+        strings.add("⚠")
+        strings.add("☤")
+        strings.add("⚕")
+        strings.add("⚚")
+        strings.add("†")
+        strings.add("☯")
+        strings.add("⚖")
+        strings.add("☮")
+        strings.add("⚘")
+        strings.add("⚔")
+        strings.add("☭")
+        strings.add("⚒")
+        strings.add("⚓")
+        strings.add("⚛")
+        strings.add("⚜")
+        strings.add("⚡")
+        strings.add("⚶")
+        strings.add("☥")
+        strings.add("✠")
+        strings.add("✙")
+        strings.add("✞")
+        strings.add("✟")
+        strings.add("✧")
+        strings.add("⋆")
+        strings.add("★")
+        strings.add("☆")
+        strings.add("✪")
+        strings.add("✫")
+        strings.add("✬")
+        strings.add("✭")
+        strings.add("✮")
+        strings.add("✯")
+        strings.add("☸")
+        strings.add("✵")
+        strings.add("❂")
+        strings.add("☘")
+        strings.add("♡")
+        strings.add("♥")
+        strings.add("❤")
+        strings.add("⚘")
+        strings.add("❀")
+        strings.add("❃")
+        strings.add("❁")
+        strings.add("✼")
+        strings.add("☀")
+        strings.add("✌")
+        strings.add("♫")
+        strings.add("♪")
+        strings.add("☃")
+        strings.add("❄")
+        strings.add("❅")
+        strings.add("❆")
+        strings.add("☕")
+        strings.add("☂")
+        strings.add("❦")
+        strings.add("✈")
+        strings.add("♕")
+        strings.add("♛")
+        strings.add("♖")
+        strings.add("♜")
+        strings.add("☁")
+        strings.add("☾")
+        return strings
     }
 
-
-    private static ArrayList<Pair<String, String>> createLeftRightPair() {
-        ArrayList<Pair<String, String>> list = new ArrayList<>();
-        list.add(new Pair<>("⫷", "⫸"));
-        list.add(new Pair<>("╰", "╯"));
-        list.add(new Pair<>("╭", "╮"));
-        list.add(new Pair<>("╟", "╢"));
-        list.add(new Pair<>("╚", "╝"));
-        list.add(new Pair<>("╔", "╗"));
-        list.add(new Pair<>("⚞", "⚟"));
-        list.add(new Pair<>("⟅", "⟆"));
-        list.add(new Pair<>("⟦", "⟧"));
-        list.add(new Pair<>("☾", "☽"));
-        list.add(new Pair<>("【", "】"));
-        list.add(new Pair<>("〔", "〕"));
-        list.add(new Pair<>("《", "》"));
-        list.add(new Pair<>("〘", "〙"));
-        list.add(new Pair<>("『", "』"));
-        list.add(new Pair<>("┋", "┋"));
-        list.add(new Pair<>("[\u0332\u0305", "\u0332\u0305]"));
-
-        return list;
+    private fun createLeftRightPair(): ArrayList<Pair<String, String>> {
+        val list = ArrayList<Pair<String, String>>()
+        list.add(Pair("⫷", "⫸"))
+        list.add(Pair("╰", "╯"))
+        list.add(Pair("╭", "╮"))
+        list.add(Pair("╟", "╢"))
+        list.add(Pair("╚", "╝"))
+        list.add(Pair("╔", "╗"))
+        list.add(Pair("⚞", "⚟"))
+        list.add(Pair("⟅", "⟆"))
+        list.add(Pair("⟦", "⟧"))
+        list.add(Pair("☾", "☽"))
+        list.add(Pair("【", "】"))
+        list.add(Pair("〔", "〕"))
+        list.add(Pair("《", "》"))
+        list.add(Pair("〘", "〙"))
+        list.add(Pair("『", "』"))
+        list.add(Pair("┋", "┋"))
+        list.add(Pair("[\u0332\u0305", "\u0332\u0305]"))
+        return list
     }
 
-
-    private static ArrayList<String> createRight() {
-        ArrayList<String> list = new ArrayList<>();
-        list.add("\u20e0");
-        list.add("\u033e");
-        list.add("\u035a");
-        list.add("\u032b");
-        list.add("\u030f");
-        list.add("\u0352");
-        list.add("\u0310");
-        list.add("\u0325");
-        list.add("\u0303");
-        list.add("\u2665");
-        list.add("\u034e");
-        list.add("\u033d\u0353");
-        list.add("\u031f");
-        list.add("\u0359");
-        list.add("\u033a");
-        list.add("\u0346");
-        list.add("\u033e");
-        list.add("\u0333");
-        list.add("\u0332");
-        list.add("\u0338");
-        list.add("\u0337");
-        list.add("\u0334");
-        list.add("\u0336");
-
-        for (char c : Zalgo.UP_CHARS) list.add(c + "");
-        for (char c : Zalgo.DOWN_CHARS) list.add(c + "");
-        for (char c : Zalgo.MID_CHARS) list.add(c + "");
-        return list;
+    private fun createRight(): ArrayList<String> {
+        val list = ArrayList<String>()
+        list.add("\u20e0")
+        list.add("\u033e")
+        list.add("\u035a")
+        list.add("\u032b")
+        list.add("\u030f")
+        list.add("\u0352")
+        list.add("\u0310")
+        list.add("\u0325")
+        list.add("\u0303")
+        list.add("\u2665")
+        list.add("\u034e")
+        list.add("\u033d\u0353")
+        list.add("\u031f")
+        list.add("\u0359")
+        list.add("\u033a")
+        list.add("\u0346")
+        list.add("\u033e")
+        list.add("\u0333")
+        list.add("\u0332")
+        list.add("\u0338")
+        list.add("\u0337")
+        list.add("\u0334")
+        list.add("\u0336")
+        for (c in Zalgo.UP_CHARS) list.add(c.toString() + "")
+        for (c in Zalgo.DOWN_CHARS) list.add(c.toString() + "")
+        for (c in Zalgo.MID_CHARS) list.add(c.toString() + "")
+        return list
     }
 
-    public static ArrayList<Style> makeStyle() {
-        ArrayList<Style> encoders = new ArrayList<>();
-        encoders.add(new BlueEffect());
-        encoders.addAll(ReplaceEffect.createStyle());
-
-        ArrayList<Pair<String, String>> leftRightPair = createLeftRightPair();
-        for (Pair<String, String> pair : leftRightPair) {
-            encoders.add(new LeftRightStyle(pair.first, pair.second));
+    @JvmStatic
+    fun makeStyle(): ArrayList<Style> {
+        val encoders = ArrayList<Style>()
+        encoders.add(BlueEffect())
+        encoders.addAll(ReplaceEffect.createStyle())
+        val leftRightPair = createLeftRightPair()
+        for (pair in leftRightPair) {
+            encoders.add(LeftRightStyle(pair.first, pair.second))
         }
-        ArrayList<String> lefts = createLeft();
-        for (String s : lefts) encoders.add(new LeftEffect(s));
-        ArrayList<String> rights = createRight();
-        for (String s : rights) encoders.add(new RightEffect(s));
-        return encoders;
+        val lefts = createLeft()
+        for (s in lefts) encoders.add(LeftEffect(s))
+        val rights = createRight()
+        for (s in rights) encoders.add(RightEffect(s))
+        return encoders
     }
 
-
-    private static class Pair<F, S> {
-        F first;
-        S second;
-
-        Pair(F first, S second) {
-            this.first = first;
-            this.second = second;
-        }
-    }
+    private class Pair<F, S> internal constructor(var first: F, var second: S)
 }

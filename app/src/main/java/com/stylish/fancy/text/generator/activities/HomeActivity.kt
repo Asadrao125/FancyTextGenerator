@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.VISIBLE
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.PopupWindow
@@ -42,6 +43,9 @@ class HomeActivity : AppCompatActivity() {
         globalFunction = GlobalFunction(this)
         toolbarTitle = findViewById(R.id.toolbarTitle)
         toolbarTitle.text = getString(R.string.home_title)
+
+        icMenu.visibility = VISIBLE
+        icMenu.setOnClickListener { showStatusPopup() }
 
         changeFragment(DashboardFragment())
         binding.chipNavBar.setItemSelected(R.id.homeMenu, true)

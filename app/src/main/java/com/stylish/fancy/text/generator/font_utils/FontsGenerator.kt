@@ -1,65 +1,63 @@
-package com.stylish.fancy.text.generator.font_utils;
+package com.stylish.fancy.text.generator.font_utils
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Context
+import com.stylish.fancy.text.generator.font_utils.FontsBuilder.makeStyle
+import com.stylish.fancy.text.generator.interfaces.Style
 
-import androidx.annotation.Nullable;
+class FontsGenerator(private var mContext: Context?) {
+    private var mEncoders: ArrayList<Style>
 
-import com.stylish.fancy.text.generator.interfaces.Style;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Objects;
-
-public class FontsGenerator {
-
-    private static final String PREF_NAME = "stylish_position.xml";
-    ArrayList<Style> mEncoders;
-    @Nullable
-    Context mContext;
-
-    public FontsGenerator(@Nullable Context context) {
-        mContext = context;
-        long time = System.currentTimeMillis();
-        mEncoders = FontsBuilder.makeStyle();
-        if (context != null) sortEncoders(context);
-        System.out.println("time = " + (System.currentTimeMillis() - time));
+    init {
+        val time = System.currentTimeMillis()
+        mEncoders = makeStyle()
+        if (mContext != null) sortEncoders(mContext!!)
+        println("time = " + (System.currentTimeMillis() - time))
     }
 
-
-    private void sortEncoders(Context context) {
-        final HashMap<Style, Integer> positionMap = new HashMap<>();
-        for (int i = 0; i < mEncoders.size(); i++) {
-            positionMap.put(mEncoders.get(i), i);
+    private fun sortEncoders(context: Context) {
+        val positionMap = HashMap<Style, Int>()
+        for (i in mEncoders.indices) {
+            positionMap[mEncoders[i]] = i
         }
         //get data from SharedPreferences
-        SharedPreferences pref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        if (pref.getInt(Integer.toHexString(mEncoders.get(0).hashCode()), -1) == -1) {
-            SharedPreferences.Editor editor = pref.edit();
-            for (int index = 0; index < mEncoders.size(); index++) {
-                Style style = mEncoders.get(index);
-                editor.putInt(Integer.toHexString(style.hashCode()), index);
+        val pref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+        if (pref.getInt(Integer.toHexString(mEncoders[0].hashCode()), -1) == -1) {
+            val editor = pref.edit()
+            for (index in mEncoders.indices) {
+                val style = mEncoders[index]
+                editor.putInt(Integer.toHexString(style.hashCode()), index)
             }
-            editor.apply();
+            editor.apply()
+        }
+        for (index in mEncoders.indices) {
+            val style = mEncoders[index]
+            val key = Integer.toHexString(style.hashCode())
+            val position = pref.getInt(key, index)
+            positionMap[style] = position
         }
 
-        for (int index = 0; index < mEncoders.size(); index++) {
-            Style style = mEncoders.get(index);
-            String key = Integer.toHexString(style.hashCode());
-            int position = pref.getInt(key, index);
-            positionMap.put(style, position);
-        }
+        /*Collections.sort(mEncoders) { o1: Style, o2: Style ->
+            Objects.requireNonNull(
+                positionMap[o1]
+            ).compareTo(Objects.requireNonNull(positionMap[o2]))
+        }*/
+
         //sort mEncoders
-        Collections.sort(mEncoders, (o1, o2) -> Objects.requireNonNull(positionMap.get(o1)).compareTo(Objects.requireNonNull(positionMap.get(o2))));
-    }
-       //Stylish Text Generator
-    public ArrayList<String> generate(String input) {
-        ArrayList<String> result = new ArrayList<>();
-        for (Style style : mEncoders) {
-            String encode = style.generate(input);
-            result.add(encode);
+        mEncoders.sortWith { o1: Style, o2: Style ->
+            positionMap[o1]?.compareTo(positionMap[o2] ?: 0) ?: 0
         }
-        return result;
+    }
+
+    fun generate(input: String?): ArrayList<String?> {
+        val result = ArrayList<String?>()
+        for (style in mEncoders) {
+            val encode = style.generate(input)
+            result.add(encode)
+        }
+        return result
+    }
+
+    companion object {
+        private const val PREF_NAME = "stylish_position.xml"
     }
 }

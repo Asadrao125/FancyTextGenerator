@@ -9,11 +9,11 @@ import com.stylish.fancy.text.generator.utils.CopyHandler
 
 class StylishTextAdapter(var activity: Context) :
     RecyclerView.Adapter<StylishTextAdapter.MyViewHolder>() {
-    private var dataList = ArrayList<String>()
+    private var dataList = ArrayList<String?>()
 
-    fun setData(list: ArrayList<String>?) {
+    fun setData(list: ArrayList<String?>) {
         dataList.clear()
-        dataList.addAll(list!!)
+        dataList.addAll(list)
         notifyDataSetChanged()
     }
 

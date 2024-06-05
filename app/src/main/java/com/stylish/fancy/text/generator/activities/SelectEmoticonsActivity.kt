@@ -1,45 +1,37 @@
-package com.stylish.fancy.text.generator.activities;
+package com.stylish.fancy.text.generator.activities
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.GridLayoutManager
+import com.stylish.fancy.text.generator.R
+import com.stylish.fancy.text.generator.adapter.SelectEmoticonsAdapter
+import com.stylish.fancy.text.generator.databinding.ActivitySelectEmoticonsBinding
+import com.stylish.fancy.text.generator.utils.StaticMethods.emoticons
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+class SelectEmoticonsActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySelectEmoticonsBinding
 
-import com.stylish.fancy.text.generator.R;
-import com.stylish.fancy.text.generator.adapter.SelectEmoticonsAdapter;
-import com.stylish.fancy.text.generator.utils.StaticMethods;
+    private lateinit var icBackOrMenu: ImageView
+    private lateinit var emoticonsAdapter: SelectEmoticonsAdapter
+    private lateinit var toolbarTitle: TextView
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_select_emoticons)
 
-public class SelectEmoticonsActivity extends AppCompatActivity {
-    RecyclerView rvEmoticons;
-    ImageView icBackOrMenu;
-    SelectEmoticonsAdapter emoticonsAdapter;
-    TextView toolbarTitle;
+        emoticonsAdapter = SelectEmoticonsAdapter(this)
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_emoticons);
+        binding.rvEmoticons.layoutManager = GridLayoutManager(this, 2)
+        binding.rvEmoticons.setHasFixedSize(true)
+        binding.rvEmoticons.adapter = emoticonsAdapter
+        emoticonsAdapter.setData(emoticons)
 
-        emoticonsAdapter = new SelectEmoticonsAdapter(this);
-        rvEmoticons = findViewById(R.id.rvEmoticons);
-        rvEmoticons.setLayoutManager(new GridLayoutManager(this, 2));
-        rvEmoticons.setHasFixedSize(true);
-        rvEmoticons.setAdapter(emoticonsAdapter);
-        emoticonsAdapter.setData(StaticMethods.getEmoticons());
+        icBackOrMenu = findViewById(R.id.icBackOrMenu)
+        toolbarTitle = findViewById(R.id.toolbarTitle)
+        toolbarTitle.text = "Emoticons"
 
-        icBackOrMenu = findViewById(R.id.icBackOrMenu);
-        toolbarTitle = findViewById(R.id.toolbarTitle);
-        toolbarTitle.setText("Emoticons");
-
-        icBackOrMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        icBackOrMenu.setOnClickListener { onBackPressed() }
     }
 }
