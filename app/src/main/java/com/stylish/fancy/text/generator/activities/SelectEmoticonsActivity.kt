@@ -32,6 +32,6 @@ class SelectEmoticonsActivity : AppCompatActivity() {
         toolbarTitle = findViewById(R.id.toolbarTitle)
         toolbarTitle.text = "Emoticons"
 
-        icBackOrMenu.setOnClickListener { onBackPressed() }
+        icBackOrMenu.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
     }
 }

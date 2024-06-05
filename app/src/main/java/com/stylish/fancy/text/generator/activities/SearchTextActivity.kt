@@ -30,7 +30,7 @@ class SearchTextActivity : AppCompatActivity() {
         icBackOrMenu = findViewById(R.id.icBackOrMenu)
         toolbarTitle = findViewById(R.id.toolbarTitle)
         toolbarTitle.text = getString(R.string.search)
-        icBackOrMenu.setOnClickListener { onBackPressed() }
+        icBackOrMenu.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
         globalFunction = GlobalFunction(this)
 
         binding.tvSearchText.setOnClickListener {

@@ -33,7 +33,7 @@ class FavouritesActivity : AppCompatActivity() {
         binding.recyclerViewEmoticons.layoutManager = LinearLayoutManager(this)
         adapter = FavouritesAdapter(this)
         binding.recyclerViewEmoticons.adapter = adapter
-        icBackOrMenu.setOnClickListener { onBackPressed() }
+        icBackOrMenu.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
         list = ArrayList(sharedPref!!.list)
         adapter.setData(list)

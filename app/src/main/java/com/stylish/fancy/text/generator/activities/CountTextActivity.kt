@@ -26,7 +26,7 @@ class CountTextActivity : AppCompatActivity() {
         icBackOrMenu = findViewById(R.id.icBackOrMenu)
         toolbarTitle = findViewById(R.id.toolbarTitle)
         toolbarTitle.setText(R.string.count_text)
-        icBackOrMenu.setOnClickListener { onBackPressed() }
+        icBackOrMenu.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
         binding.tvCountText.setOnClickListener {
             hideKeyboard(this@CountTextActivity)

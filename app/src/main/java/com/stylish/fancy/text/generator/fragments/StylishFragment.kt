@@ -15,6 +15,7 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.stylish.fancy.text.generator.R
 import com.stylish.fancy.text.generator.adapter.StylishTextAdapter
 import com.stylish.fancy.text.generator.databinding.FragmentStylishBinding
 import com.stylish.fancy.text.generator.font_utils.FontsGenerator
@@ -60,7 +61,7 @@ class StylishFragment : Fragment(), TextWatcher {
 
     private fun convertText(inp: String) {
         var inp = inp
-        if (inp.isEmpty()) inp = "Fancy Text"
+        if (inp.isEmpty()) inp = requireActivity().getString(R.string.stylish_text)
         val translate: ArrayList<String?> = mGenerator.generate(inp)
         mAdapter.setData(translate)
     }
@@ -82,7 +83,7 @@ class StylishFragment : Fragment(), TextWatcher {
         activityResultLauncher.launch(intent)
     }
 
-    private val activityResultLauncher = registerForActivityResult<Intent, ActivityResult>(
+    private val activityResultLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK) {

@@ -28,7 +28,7 @@ class ReplaceTextActivity : AppCompatActivity() {
         icBackOrMenu = findViewById(R.id.icBackOrMenu)
         toolbarTitle = findViewById(R.id.toolbarTitle)
         toolbarTitle.text = getString(R.string.replace)
-        icBackOrMenu.setOnClickListener { onBackPressed() }
+        icBackOrMenu.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
         globalFunction = GlobalFunction(this)
 
         binding.tvReplaceText.setOnClickListener {

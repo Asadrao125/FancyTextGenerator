@@ -38,7 +38,7 @@ class StylishTextActivity : AppCompatActivity(), TextWatcher {
         icBackOrMenu = findViewById(R.id.icBackOrMenu)
         toolbarTitle = findViewById(R.id.toolbarTitle)
         toolbarTitle.text = getString(R.string.stylish_text)
-        icBackOrMenu.setOnClickListener { onBackPressed() }
+        icBackOrMenu.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
         mGenerator = FontsGenerator(this)
 
         binding.micBtn.setOnClickListener { startForResult() }
@@ -75,7 +75,7 @@ class StylishTextActivity : AppCompatActivity(), TextWatcher {
         activityResultLauncher.launch(intent)
     }
 
-    private val activityResultLauncher = registerForActivityResult<Intent, ActivityResult>(
+    private val activityResultLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result: ActivityResult ->
         if (result.resultCode == RESULT_OK) {
@@ -87,18 +87,9 @@ class StylishTextActivity : AppCompatActivity(), TextWatcher {
         }
     }
 
-    @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == RESULT_OK && data != null && requestCode == 123) {
-            val results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-            editText.setText(results!![0])
-        }
-    }
-
     private fun convertText(inp: String) {
         var inp = inp
-        if (inp.isEmpty()) inp = "Fancy Text"
+        if (inp.isEmpty()) inp = getString(R.string.stylish_text)
         val translate: ArrayList<String?> = mGenerator.generate(inp)
         mAdapter.setData(translate)
     }

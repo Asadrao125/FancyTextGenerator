@@ -31,7 +31,7 @@ class MarkTextActivity : AppCompatActivity() {
         toolbarTitle = findViewById(R.id.toolbarTitle)
         toolbarTitle.text = getString(R.string.mark)
         globalFunction = GlobalFunction(this)
-        icBackOrMenu.setOnClickListener { onBackPressed() }
+        icBackOrMenu.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
         binding.tvnMarkText.setOnClickListener {
             hideKeyboard(this@MarkTextActivity)

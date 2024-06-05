@@ -1,6 +1,5 @@
 package com.stylish.fancy.text.generator.activities
 
-import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -106,7 +105,6 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     private fun showDialog() {
         val rating = floatArrayOf(0f)
         val dialogBuilder = AlertDialog.Builder(this)
@@ -137,6 +135,7 @@ class HomeActivity : AppCompatActivity() {
         alertDialog.show()
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         showDialog()
     }

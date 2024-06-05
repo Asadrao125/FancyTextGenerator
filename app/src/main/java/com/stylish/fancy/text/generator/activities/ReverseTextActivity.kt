@@ -28,7 +28,7 @@ class ReverseTextActivity : AppCompatActivity() {
         icBackOrMenu = findViewById(R.id.icBackOrMenu)
         toolbarTitle = findViewById(R.id.toolbarTitle)
         toolbarTitle.text = getString(R.string.reverse_text_cb)
-        icBackOrMenu.setOnClickListener { onBackPressed() }
+        icBackOrMenu.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
         globalFunction = GlobalFunction(this)
 
         binding.tvReverseText.setOnClickListener {

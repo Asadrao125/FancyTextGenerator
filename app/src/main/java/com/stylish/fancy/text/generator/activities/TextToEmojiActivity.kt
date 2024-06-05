@@ -34,7 +34,7 @@ class TextToEmojiActivity : AppCompatActivity() {
         toolbarTitle.setText(R.string.text_to_emoji)
         textToEmoji = TextToEmoji(this)
         copyHandler = CopyHandler(this)
-        icBackOrMenu.setOnClickListener { onBackPressed() }
+        icBackOrMenu.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
         val emojiFilter: InputFilter = EmojiInputFilter()
 
         binding.emoji.filters = arrayOf(emojiFilter)

@@ -8,6 +8,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.stylish.fancy.text.generator.R
@@ -28,8 +29,9 @@ class CloneTextActivity : AppCompatActivity() {
         toolbarTitle = findViewById(R.id.toolbarTitle)
 
         toolbarTitle.text = "Clone Text"
-        icBackOrMenu.setOnClickListener { onBackPressed() }
         globalFunction = GlobalFunction(this)
+
+        icBackOrMenu.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
         binding.tvCloneText.setOnClickListener {
             hideKeyboard(this@CloneTextActivity)
